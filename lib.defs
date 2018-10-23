@@ -1,0 +1,8 @@
+INCLUDE $HPEESOF_DIR/oalibs/analog_rf.defs
+INCLUDE C:/Users/henri/Dropbox/NTNU/ADS/Johanson_lib_v1.0/lib.defs
+INCLUDE C:/Users/henri/CGH40010F_package/lib.defs
+INCLUDE C:/Users/henri/Dropbox/NTNU/ADS/Murata/lib.defs
+DEFINE SemesterProjectDesperate_lib SemesterProjectDesperate_lib
+ASSIGN SemesterProjectDesperate_lib libMode shared
+DEFINE SemesterProject1_lib__cell_1IdeelPA_lib SemesterProject1_lib__cell_1IdeelPA_lib
+ASSIGN SemesterProject1_lib__cell_1IdeelPA_lib libMode shared

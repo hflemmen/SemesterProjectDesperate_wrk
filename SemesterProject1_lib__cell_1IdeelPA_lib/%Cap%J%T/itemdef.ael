@@ -1,0 +1,2 @@
+create_item("CapJT","CapJT","X",16,-1,NULL,"Component Parameters",NULL,"%43?global %;%d:%t %# %44?0%:%31?%C%:_net%c%;%;%e %b%r%8?%29?%:%30?%p %:%k%?[%1i]%;=%p %;%;%;%e%e","CapJT","%t%b%r%38?%:\n%30?%s%:%k%?[%1i]%;=%s%;%;%e%e%;","CapJT",3,NULL,0,
+create_parm("C","Capacitance",68608,"StdFormSet",4,prm("StdForm","1.0 pF")));

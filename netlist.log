@@ -1,0 +1,69 @@
+; Top Design: "SemesterProject1_lib__cell_1IdeelPA_lib:SP_NF_GainMatchK:schematic"
+; Netlisted using Hierarchy Policy: "Standard"
+
+Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="SemesterProject1_lib__cell_1IdeelPA_lib:SP_NF_GainMatchK:schematic" DcopOutputNodeVoltages=yes DcopOutputPinCurrents=yes DcopOutputAllSweepPoints=no DcopOutputDcopType=0
+; Library Name: SemesterProject1_lib__cell_1IdeelPA_lib
+; Cell Name: CapJT
+; View Name: schematic
+define CapJT ( P1  P2 ) 
+parameters  C=1.0 pF 
+C:C7  N__3 P2 C=0.937*C 
+L:L1  P1 N__3 L=(0.647*(C/(1pF))^-0.0414) nH R=3.74*(C/(1pF))^-0.195 Ohm Noise=yes  
+C:C10  P2 0 C=0.0317 pF 
+C:C9  P1 0 C=0.0317 pF 
+end CapJT
+
+; Library Name: SemesterProject1_lib__cell_1IdeelPA_lib
+; Cell Name: VarPA
+; View Name: schematic
+define VarPA ( P1  P2  P3  P4 ) 
+;parameters 
+#uselib "CGH40010F_package" , "Packaged_lib_CGH40010F_package_schematic"
+"Packaged_lib_CGH40010F_package_schematic":X1  N__0 N__4 0 t=25  rth=8  
+CapJT:Kap3  0 P2 C=1 pF 
+CapJT:Kap4  P3 0 C=1 pF 
+CapJT:Kap2  N__4 N__3 C=1 pF 
+CapJT:Kap1  N__1 N__0 C=1 pF 
+MLIN2:TL1  P2 N__0 Subst="MSub1" W=3.04474 mm L=17.1333 mm Wall1=2.5e+28 mm Wall2=2.5e+28 mm Mod=1 
+MLIN2:TL2  P3 N__4 Subst="MSub1" W=3.04474 mm L=17.1333 mm Wall1=2.5e+28 mm Wall2=2.5e+28 mm Mod=1 
+MLIN2:TL10  P1 N__1 Subst="MSub1" W=3.04474 mm L=6.17752 mm Wall1=2.5e+28 mm Wall2=2.5e+28 mm Mod=1 
+MLIN2:TL11  N__3 P4 Subst="MSub1" W=3.04474 mm L=6.7 mm Wall1=2.5e+28 mm Wall2=2.5e+28 mm Mod=1 
+MLOC2:TL3  P3 Subst="MSub1" W=3.04474 mm L=17.1333 mm Wall1=2.5e+28 mm Wall2=2.5e+28 mm Mod=1 
+MLOC2:TL4  P2 Subst="MSub1" W=3.04474 mm L=17.1333 mm Wall1=2.5e+28 mm Wall2=2.5e+28 mm Mod=1 
+model MSub1 MSUB H=1.6 mm Er=4.4  Mur=1  Cond=59600000  Hu=3.9e+34 mm T=0.035 mm TanD=0.02  Rough=0 mm DielectricLossModel=1 FreqForEpsrTanD=1 GHz LowFreqForTanD=1 kHz HighFreqForTanD=1 THz RoughnessModel=2 
+MLSC2:TL9  P1 Subst="MSub1" W=3.04474 mm L=2.85556 mm Wall1=2.5e+28 mm Wall2=2.5e+28 mm Mod=1 
+MLSC2:TL12  P4 Subst="MSub1" W=3.04474 mm L=4.3 mm Wall1=2.5e+28 mm Wall2=2.5e+28 mm Mod=1 
+end VarPA
+
+S_Param:SP1 CalcS=yes CalcGroupDelay=yes GroupDelayAperture=1e-4 FreqConversion=no FreqConversionPort=1 StatusLevel=2 CalcNoise=yes SortNoise=0 BandwidthForNoise=1.0 Hz DevOpPtLevel=0 \
+SweepVar="freq" SweepPlan="SP1_stim" OutputPlan="SP1_Output" 
+
+SweepPlan: SP1_stim Start=0.5 GHz Stop=7 GHz Step=0.1 GHz 
+
+OutputPlan:SP1_Output \
+      Type="Output" \
+      UseEquationNestLevel=yes \
+      EquationNestLevel=2 \
+      EquationName[1]="Z0" \
+      UseSavedEquationNestLevel=yes \
+      SavedEquationNestLevel=2
+
+#load "python","LinearCollapse"
+Component Module="LinearCollapse" Type="ModelExtractor" NetworkRepresentation=2
+
+Z0=50
+Port:Term1  N__1 0 Num=1 Z=Z0 Noise=yes 
+Port:Term2  N__6 0 Num=2 Z=Z0 Noise=yes 
+
+Options:Options1 Temp=16.85 Tnom=25 TopologyCheck=yes ForceS_Params=yes V_RelTol=1e-6  \
+I_RelTol=1e-6 GiveAllWarnings=yes MaxWarnings=10 ForceM_Params=yes DC_ReadInitialGuess=no  \
+DC_WriteFinalSolution=no TopologyCheckMessages=no GPU=no doDeltaAC=no ReduceSPort=no  \
+ReduceSPortRatio=0.5 WarnSOA=yes MaxWarnSOA=5 Census=no MinNodalR=1e-2 Ohm  \
+LargeCapThreshold=1e-3 F EnableAssertChecks=no EnableSpareRemoval=yes 
+
+aele mu_load=mu(S);mu_source=mu_prime(S);match_input=sm_gamma1(S);Source_stabcir=s_stab_circle(S,51);Load_stabcir=l_stab_circle(S,51);
+aele Mu1=mu(S);
+aele MuPrime1=mu_prime(S);
+VarPA:X1  N__1 N__6 N__3 N__2 
+V_Source:SRC1  N__2 0 Type="V_DC" Vdc=28 V SaveCurrent=1 
+V_Source:SRC2  N__3 0 Type="V_DC" Vdc=-2.75 V SaveCurrent=1 

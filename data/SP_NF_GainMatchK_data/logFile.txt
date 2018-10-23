@@ -1,0 +1,31 @@
+
+hpeesofsim (*) 471.update1.0 Jul 13 2018, MINT version 4
+    (64-bit windows built: Sat Jul 14, 2018 02:39:51 +0000)
+Copyright 1989 - 2017 Keysight Technologies.
+
+Warning detected by hpeesofsim during netlist flattening.
+    Capacitor `X1.Kap3.C9' is shorted.
+
+Warning detected by hpeesofsim during netlist flattening.
+    Capacitor `X1.Kap4.C10' is shorted.
+
+Warning detected by hpeesofsim in topology check during circuit set up.
+    Number of nodes with no DC path to ground (topology corrected): 1
+
+Pt DC convergence is used.
+
+SP SP1[1] <SemesterProject1_lib__cell_1IdeelPA_lib:SP_NF_GainMatchK:schematic>   freq=(500 MHz->7 GHz)
+
+Warning detected by hpeesofsim during circuit set up.
+    `X1.X1.Q1': Unable to resolve variable(s) or functions(s) in expression ` Tj=Tbase+dT'
+        dT
+Warning detected by hpeesofsim during circuit set up.
+    `X1.X1.Q1': Unable to resolve variable(s) or functions(s) in expression `idi=id.i'
+        id.i
+Warning detected by hpeesofsim during circuit set up.
+    `X1.X1.Q1': Unable to resolve variable(s) or functions(s) in expression `vdsi=vdi'
+        vdi
+
+Resource usage:
+  Total stopwatch time     =     2.61 seconds.
+
