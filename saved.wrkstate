@@ -1,0 +1,13 @@
+<!DOCTYPE SaveWorkspaceState>
+<SaveWorkspaceState>
+    <Windows>
+        <Schematic view="schematic" height="1027" lib="SemesterProject1_lib__cell_1IdeelPA_lib" x1="-8" y1="-8" geom="1,0,2,415,111,1536,960,1920,1080" cell="HB1TonePAE_Pswp" width="1920"/>
+        <Schematic view="schematic" height="1027" lib="SemesterProject1_lib__cell_1IdeelPA_lib" x1="-8" y1="-8" geom="1,0,2,435,131,1536,960,1920,1080" cell="SP_NF_GainMatchK" width="1920"/>
+        <Schematic view="schematic" height="1027" lib="SemesterProject1_lib__cell_1IdeelPA_lib" x1="-8" y1="-8" geom="1,0,2,455,151,1536,960,1920,1080" cell="cell_1" width="1920"/>
+        <Schematic view="schematic" height="1018" lib="SemesterProject1_lib__cell_1IdeelPA_lib" x1="953" y1="0" geom="1,0,0,953,0,958,1018,1920,1080" cell="OurPA" width="958"/>
+        <Schematic view="schematic" height="1018" lib="SemesterProject1_lib__cell_1IdeelPA_lib" x1="-7" y1="0" geom="1,0,0,-7,0,958,1018,1920,1080" cell="VarPA" width="958"/>
+        <DDS name="HB1TonePAE_Pswp.dds"/>
+        <DDS name="SP_NF_GainMatchK.dds"/>
+    </Windows>
+    <MainWindowTab tab="1"/>
+</SaveWorkspaceState>

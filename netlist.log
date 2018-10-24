@@ -22,17 +22,17 @@ define VarPA ( P1  P2  P3  P4 )
 "Packaged_lib_CGH40010F_package_schematic":X1  N__0 N__4 0 t=25  rth=8  
 CapJT:Kap3  0 P2 C=1 pF 
 CapJT:Kap4  P3 0 C=1 pF 
-CapJT:Kap2  N__4 N__3 C=1 pF 
-CapJT:Kap1  N__1 N__0 C=1 pF 
+CapJT:Kap2  N__4 N__1 C=1 pF 
+CapJT:Kap1  N__8 N__0 C=1 pF 
 MLIN2:TL1  P2 N__0 Subst="MSub1" W=3.04474 mm L=17.1333 mm Wall1=2.5e+28 mm Wall2=2.5e+28 mm Mod=1 
 MLIN2:TL2  P3 N__4 Subst="MSub1" W=3.04474 mm L=17.1333 mm Wall1=2.5e+28 mm Wall2=2.5e+28 mm Mod=1 
-MLIN2:TL10  P1 N__1 Subst="MSub1" W=3.04474 mm L=6.17752 mm Wall1=2.5e+28 mm Wall2=2.5e+28 mm Mod=1 
-MLIN2:TL11  N__3 P4 Subst="MSub1" W=3.04474 mm L=6.7 mm Wall1=2.5e+28 mm Wall2=2.5e+28 mm Mod=1 
 MLOC2:TL3  P3 Subst="MSub1" W=3.04474 mm L=17.1333 mm Wall1=2.5e+28 mm Wall2=2.5e+28 mm Mod=1 
 MLOC2:TL4  P2 Subst="MSub1" W=3.04474 mm L=17.1333 mm Wall1=2.5e+28 mm Wall2=2.5e+28 mm Mod=1 
 model MSub1 MSUB H=1.6 mm Er=4.4  Mur=1  Cond=59600000  Hu=3.9e+34 mm T=0.035 mm TanD=0.02  Rough=0 mm DielectricLossModel=1 FreqForEpsrTanD=1 GHz LowFreqForTanD=1 kHz HighFreqForTanD=1 THz RoughnessModel=2 
-MLSC2:TL9  P1 Subst="MSub1" W=3.04474 mm L=2.85556 mm Wall1=2.5e+28 mm Wall2=2.5e+28 mm Mod=1 
-MLSC2:TL12  P4 Subst="MSub1" W=3.04474 mm L=4.3 mm Wall1=2.5e+28 mm Wall2=2.5e+28 mm Mod=1 
+MLIN2:TL13  P1 N__8 Subst="MSub1" W=3.04474 mm L=6.17752 mm tune{ 1 mm to 20 mm by 0.1 mm } opt{ 1 mm to 20 mm } Wall1=2.5e+28 mm Wall2=2.5e+28 mm Mod=1 
+MLSC2:TL14  P1 Subst="MSub1" W=3.04474 mm L=2.85556 mm tune{ 1 mm to 10 mm by 0.1 mm } opt{ 1 mm to 10 mm } Wall1=2.5e+28 mm Wall2=2.5e+28 mm Mod=1 
+MLIN2:TL15  N__1 P4 Subst="MSub1" W=3.04474 mm L=6.7 mm tune{ 1 mm to 20 mm by 0.1 mm } Wall1=2.5e+28 mm Wall2=2.5e+28 mm Mod=1 
+MLSC2:TL16  P4 Subst="MSub1" W=3.04474 mm L=4.3 mm tune{ 1 mm to 20 mm by 0.1 mm } opt{ 1 mm to 20 mm } Wall1=2.5e+28 mm Wall2=2.5e+28 mm Mod=1 
 end VarPA
 
 S_Param:SP1 CalcS=yes CalcGroupDelay=yes GroupDelayAperture=1e-4 FreqConversion=no FreqConversionPort=1 StatusLevel=2 CalcNoise=yes SortNoise=0 BandwidthForNoise=1.0 Hz DevOpPtLevel=0 \
